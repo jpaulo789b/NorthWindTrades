@@ -47,17 +47,19 @@ public class HomeActivity extends AppCompatActivity {
 
     protected Category populateList(){
         Category category = new Category();
-        category.setCategoryId(1/*Integer.parseInt(txtCategoryId.getText().toString())*/);
-        category.setCategoryName("NomeCategoria"/*txtCategoryName.getText().toString()*/);
-        category.setDescription("descricao"/*txtCategoryDescription.getText().toString()*/);
+        category.setCategoryId(Integer.parseInt(txtCategoryId.getText().toString()));
+        category.setCategoryName("NomeCategoria: "+txtCategoryName.getText().toString());
+        category.setDescription("descricao: "+txtCategoryDescription.getText().toString());
         category.setPicture(BitmapFactory.decodeResource(getResources(), R.drawable.student_1));
         return category;
     }
 
 
-    @OnClick(R.id.btnCategory) public void getCategory(View view) {
+    @OnClick(R.id.btnCategory)
+    public void getCategory(View view) {
 
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
+
 //        Intent it = new Intent(this, CategoryActivity.class);
 //        categories.add(populateList());
 //        it.putParcelableArrayListExtra("categories", (ArrayList<? extends Parcelable>) categories);

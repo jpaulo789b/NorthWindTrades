@@ -134,7 +134,7 @@ public class CategoryDAO extends SQLiteOpenHelper {
         List<Category> categories = new ArrayList<Category>();
 
         //Query de consulta
-        String query = "SELECT * FROM " + TABELA;
+        String query = "SELECT * FROM " + TABELA + " ORDER BY "+ Category.KEY_CATEGORY_ID +" DESC LIMIT 3";
 
         //Aqui realizamos a consulta e o resultado é atribuído em um Cursor;
         //Um Cursor nos ajuda a navegar nos objetos retornados.
