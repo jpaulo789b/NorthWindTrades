@@ -68,10 +68,10 @@ public class CategoryAdapter extends BaseAdapter {
         tv.setText(category.getCategoryId().toString());
 
         tv = (TextView) view.findViewById(R.id.eCategoryName);
-        tv.setText(category.getCategoryName());
+        tv.setText("NomeCategoria: "+category.getCategoryName());
 
         tv = (TextView) view.findViewById(R.id.eCategoryDescription);
-        tv.setText(category.getDescription());
+        tv.setText("descricao: "+category.getDescription());
 
         return view;
     }

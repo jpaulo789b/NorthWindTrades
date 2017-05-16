@@ -124,8 +124,7 @@ public class CategoryDAO extends SQLiteOpenHelper {
         values.put(Category.KEY_CATEGORY_DESCRIPTION,category.getDescription());
         values.put(Category.KEY_CATEGORY_PICTURE, M.ConvertPicture(category.getPicture()));
 
-        db.update(Category.TABELA,values,Category.KEY_CATEGORY_ID+ " = ?",
-                new String[]{String.valueOf(Category.KEY_CATEGORY_ID)});
+        db.update(Category.TABELA,values,Category.KEY_CATEGORY_ID+ " = ?", new String[]{String.valueOf(category.getCategoryId())});
 
     }
 
@@ -173,8 +172,8 @@ public class CategoryDAO extends SQLiteOpenHelper {
 
         //Instrução para deletar o registro.
         //O método espera 3 campos - TABELA, CONDICAO (WHERE), VALOR (argumento)
-        db.delete(Category.TABELA,Category.KEY_CATEGORY_ID,
-                new String[]{String.valueOf(category.getCategoryId())});
+        db.delete(Category.TABELA,Category.KEY_CATEGORY_ID+" =?", new String[]{String.valueOf(category.getCategoryId())});
+
     }
 
 
